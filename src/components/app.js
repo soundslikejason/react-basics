@@ -6,13 +6,21 @@ export default class App extends Component {
     super(props);
     this.state = {
       counter: 0,
+      value: '',
     };
   }
+
+  textEntered = (event) => {
+    console.log('text: ', event.target.value);
+    this.setState({ value: event.target.value });
+  }
+
   render() {
     return (
       <div>
-        {this.state.counter}
+        {this.state.value}
         <Button name={'Add 1'} clicked={() => this.setState({ counter: this.state.counter + 1 })} />
+        <input type="text" value={this.state.value} onChange={this.textEntered} />
       </div>
     );
   }
