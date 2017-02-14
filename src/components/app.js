@@ -5,22 +5,25 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0,
+      textValue: '',
       value: '',
     };
   }
 
   textEntered = (event) => {
-    console.log('text: ', event.target.value);
     this.setState({ value: event.target.value });
+  }
+
+  changeText = () => {
+    this.setState({ textValue: this.state.value });
   }
 
   render() {
     return (
       <div>
-        {this.state.value}
-        <Button name={'Add 1'} clicked={() => this.setState({ counter: this.state.counter + 1 })} />
+        {this.state.textValue}
         <input type="text" value={this.state.value} onChange={this.textEntered} />
+        <Button name={'Click Me'} clicked={this.changeText} />
       </div>
     );
   }
