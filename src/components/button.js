@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
 
 const Button = (props) => (
-  <button>{props.name}</button>
+  <button onClick={props.clicked}>{props.name}</button>
 );
 
 Button.propTypes = {
   name: PropTypes.string,
+  clicked: PropTypes.func,
 };
 
 export default Button;

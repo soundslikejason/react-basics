@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Button from './button';
 
-// () => fat arrow function set up by es6, function() {}
-const App = () => (
-  <div>
-    <Button name={'Click'} />
-    <Button name={'Search'} />
-  </div>
-);
-
-export default App;
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+    };
+  }
+  render() {
+    return (
+      <div>
+        {this.state.counter}
+        <Button name={'Add 1'} clicked={() => this.setState({ counter: this.state.counter + 1 })} />
+      </div>
+    );
+  }
+}
