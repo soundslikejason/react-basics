@@ -4,7 +4,8 @@ import Button from './button';
 // () => fat arrow function set up by es6, function() {}
 const App = () => (
   <div>
-    <Button />
+    <Button name={'Click'} />
+    <Button name={'Search'} />
   </div>
 );
 
